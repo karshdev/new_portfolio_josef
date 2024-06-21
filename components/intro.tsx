@@ -65,7 +65,7 @@ export default function Intro() {
   <span>
     Hello! I'm <span className="font-bold">Josef</span>, a passionate and hardworking software developer with a deep love for creating elegant, efficient projects. My journey in programming began 2 years ago for fun, and now I am pursuing it as a career.
   </span>
-  <br />
+
   <span className="font-bold">My experience includes</span>
   <span className="underline"> HTML, CSS, JavaScript, and Python</span>
   <span>, along with frameworks and tools such as Flask, Node.js, React, and MongoDB.</span>
