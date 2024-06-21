@@ -82,7 +82,7 @@ export const projectsData = [
       "Engineered a distributed system for dentist appointments in Gothenburg using Python (Flask), JavaScript, Vue.js, and MongoDB.",
     tags: ["Flask", "Python", "JavaScript", "Vue.js", "MongoDB"],
     imageUrl: "/dentist2.jpg",
-    deployed: "https://example.com/gothenburg-dentist-appointment-system",
+    deployed: "",
     github:"https://github.com/Abdurahim00/Dental-booking-System"
   },
   {
@@ -91,7 +91,7 @@ export const projectsData = [
       "Built TALKLINK, a multi-language chat app featuring real-time translation powered by ChatGPT OpenAI API, using Vue, JavaScript, Node.js, and MongoDB.",
     tags: ["Vue", "JavaScript", "Node.js", "MongoDB", "ChatGPT", "OpenAI API"],
     imageUrl: "/Teaser.jpg",
-    deployed: "https://example.com/talklink-chat-app",
+    deployed: "",
       github:"https://github.com/Abdurahim00/TALKLINK"
   },
   {
@@ -100,7 +100,7 @@ export const projectsData = [
       "Developed a Flutter app connecting to an Arduino microcontroller with sensors, using MQTT to measure and evaluate sleep performance.",
     tags: ["Flutter", "Microcontroller", "MQTT", "Firebase"],
     imageUrl: "/sleepwellmobile.png",
-    deployed: "https://example.com/sleep-well-project",
+    deployed: "",
     github:"https://github.com/Abdurahim00/Sleep-Well"
   },
 ];
