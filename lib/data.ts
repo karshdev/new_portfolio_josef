@@ -74,6 +74,7 @@ export const projectsData = [
     tags: ["Flask", "Python", "JavaScript", "Vue.js", "MongoDB"],
     imageUrl: "/Algebrona.png",
     deployed: "https://play.google.com/store/apps/details?id=com.aj.algebrona&hl=en_US",
+    github:"https://github.com/Abdurahim00/Algebraskolan/tree/main/algebraskolan2"
   },
   {
     title: "Gothenburg Dentist Appointment System",
@@ -82,6 +83,7 @@ export const projectsData = [
     tags: ["Flask", "Python", "JavaScript", "Vue.js", "MongoDB"],
     imageUrl: "/dentist2.jpg",
     deployed: "https://example.com/gothenburg-dentist-appointment-system",
+    github:"https://github.com/Abdurahim00/Dental-booking-System"
   },
   {
     title: "TALKLINK Chat App",
@@ -90,6 +92,7 @@ export const projectsData = [
     tags: ["Vue", "JavaScript", "Node.js", "MongoDB", "ChatGPT", "OpenAI API"],
     imageUrl: "/Teaser.jpg",
     deployed: "https://example.com/talklink-chat-app",
+      github:"https://github.com/Abdurahim00/TALKLINK"
   },
   {
     title: "Sleep Well Project",
@@ -98,6 +101,7 @@ export const projectsData = [
     tags: ["Flutter", "Microcontroller", "MQTT", "Firebase"],
     imageUrl: "/sleepwellmobile.png",
     deployed: "https://example.com/sleep-well-project",
+    github:"https://github.com/Abdurahim00/Sleep-Well"
   },
 ];
 
