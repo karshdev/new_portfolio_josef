@@ -77,15 +77,6 @@ export const projectsData = [
     github:"https://github.com/Abdurahim00/Algebraskolan/tree/main/algebraskolan2"
   },
   {
-    title: "Gothenburg Dentist Appointment System",
-    description:
-      "Engineered a distributed system for dentist appointments in Gothenburg using Python (Flask), JavaScript, Vue.js, and MongoDB.",
-    tags: ["Flask", "Python", "JavaScript", "Vue.js", "MongoDB"],
-    imageUrl: "/dentist2.jpg",
-    deployed: "",
-    github:"https://github.com/Abdurahim00/Dental-booking-System"
-  },
-  {
     title: "TALKLINK Chat App",
     description:
       "Built TALKLINK, a multi-language chat app featuring real-time translation powered by ChatGPT OpenAI API, using Vue, JavaScript, Node.js, and MongoDB.",
@@ -103,6 +94,17 @@ export const projectsData = [
     deployed: "",
     github:"https://github.com/Abdurahim00/Sleep-Well"
   },
+  {
+    title: "Gothenburg Dentist Appointment System",
+    description:
+      "Engineered a distributed system for dentist appointments in Gothenburg using Python (Flask), JavaScript, Vue.js, and MongoDB.",
+    tags: ["Flask", "Python", "JavaScript", "Vue.js", "MongoDB"],
+    imageUrl: "/dentist2.jpg",
+    deployed: "",
+    github:"https://github.com/Abdurahim00/Dental-booking-System"
+  },
+ 
+ 
 ];
 
 
