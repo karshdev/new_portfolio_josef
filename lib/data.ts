@@ -33,34 +33,34 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Secondary School",
-    location: "United Kingdom",
+    title: "Highschool",
+    location: "Sweden, Gothenburg",
     description:
-      "Completed my secondary school education in the United Kingdom.",
+      "Completed my Highschool education in Natural Science (Gymnasieakademin).",
     icon: React.createElement(LuGraduationCap),
-    date: "2020",
+    date: "2019",
   },
   {
     title: "Software Engineering and Management Student",
     location: "Gothenburg University, Sweden",
     description:
-      "Pursuing a degree in Software Engineering and Management, focusing on areas such as Object-Oriented Programming, Data Structures, and Software Architecture.",
+      "Pursuing a degree in Software Engineering and Management, with a comprehensive focus on developing advanced technical and managerial skills.",
     icon: React.createElement(LuGraduationCap),
     date: "Aug 2022 - May 2025",
   },
   {
     title: "Full-Stack Developer Intern",
-    location: "Ladybug, Gothenburg, Sweden",
+    location: "Luday, Gothenburg, Sweden",
     description:
-      "Worked as a full-stack developer intern, contributing to an Agile Scrum team and developing a management tool integrated with Trello.",
+      "Served as a full-stack developer intern, actively contributing to an Agile Scrum team to develop a management tool similar to Trello for internal company use.",
     icon: React.createElement(FaReact),
     date: "Mar 2024 - Jun 2024",
   },
   {
     title: "Developer",
-    location: "Alghorabaskolan, Gothenburg, Sweden",
+    location: "Algebraskolan, Gothenburg, Sweden",
     description:
-      "Developed a custom digital reward system app using Flutter and Firebase, transitioning from a physical coin system to digital transactions.",
+      "Developed a custom digital reward system app using Flutter and Firebase, replacing a physical coin system with digital transactions. This app is currently in use by the school to streamline and digitalize their reward system.",
     icon: React.createElement(CgWorkAlt),
     date: "Jun 2023 - Present",
   },

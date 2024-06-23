@@ -63,15 +63,14 @@ export default function Intro() {
   animate={{ opacity: 1, y: 0 }}
 >
   <span>
-    Hello! I'm <span className="font-bold">Josef</span>, a passionate and hardworking software developer with a deep love for creating elegant, efficient projects. My journey in programming began 2 years ago for fun, and now I am pursuing it as a career.
+    Hello! I'm <span className="font-bold">Josef</span>, a dedicated software engineer with a passion for crafting elegant and efficient solutions. I excel in transforming complex challenges into streamlined projects and continually push the boundaries of software development.
   </span>
-
-  <span className="font-bold">My experience includes</span>
-  <span className="underline"> HTML, CSS, JavaScript, and Python</span>
-  <span>, along with frameworks and tools such as Flask, Node.js, React, and MongoDB.</span>
+  <br />
+  <span className="font-bold">My expertise spans </span> 
+  <span className="underline">Python and JavaScript</span>, 
+  including full-stack development for web and mobile applications using frameworks and tools such as Flutter, Flask, Node.js, React, Vue, and MongoDB.
   <br />
 </motion.h1>
-
 
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
