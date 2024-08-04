@@ -80,9 +80,9 @@ export const projectsData = [
     title: "TALKLINK Chat App",
     description:
       "Built TALKLINK, a multi-language chat app featuring real-time translation powered by ChatGPT OpenAI API, using Vue, JavaScript, Node.js, and MongoDB.",
-    tags: ["Vue", "JavaScript", "Node.js", "MongoDB", "ChatGPT", "OpenAI API"],
+    tags: ["Vue", "JavaScript", "Node.js", "MongoDB"],
     imageUrl: "/Teaser.jpg",
-    deployed: "",
+    deployed: "talklink.online",
       github:"https://github.com/Abdurahim00/TALKLINK"
   },
   {
