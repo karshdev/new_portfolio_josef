@@ -83,7 +83,7 @@ export const projectsData = [
     tags: ["Vue", "JavaScript", "Node.js", "MongoDB"],
     imageUrl: "/Teaser.jpg",
     deployed: "https://talklink.online/login",
-      github:"https://github.com/Abdurahim00/TALKLINK"
+      github:"https://talklink.online/login"
   },
   {
     title: "Sleep Well Project",
