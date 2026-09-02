@@ -1,17 +1,12 @@
-import Header from "@/components/header";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import ActiveSectionContextProvider from "@/context/active-section-context";
-import Footer from "@/components/footer";
-import ThemeSwitch from "@/components/theme-switch";
-import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
-
-const inter = Inter({ subsets: ["latin"] });
+import ActiveSectionContextProvider from "@/context/active-section-context";
+import ThemeProvider from "@/context/theme-context";
 
 export const metadata = {
-  title: "Josef | Personal Portfolio",
-  description: "Josef is a full-stack developer..",
+  title: "Josef Al-Masri — Fullstack developer · Co-founder & CTO, Viafocus",
+  description:
+    "Fullstack developer who builds products people actually use. Co-founder & CTO of Viafocus, an ALMI-backed EdTech SaaS live in a Swedish school. Node.js, React, TypeScript, PostgreSQL.",
 };
 
 export default function RootLayout({
@@ -20,23 +15,42 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
-      >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
-
-        <ThemeContextProvider>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+        />
+      </head>
+      <body className="font-sans antialiased">
+        <ThemeProvider>
           <ActiveSectionContextProvider>
-            <Header />
             {children}
-            <Footer />
-
-            <Toaster position="top-right" />
-            <ThemeSwitch />
+            <Toaster
+              position="bottom-center"
+              toastOptions={{
+                style: {
+                  background: "var(--ink)",
+                  color: "var(--paper)",
+                  borderRadius: "6px",
+                  padding: "10px 16px",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                },
+              }}
+            />
           </ActiveSectionContextProvider>
-        </ThemeContextProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

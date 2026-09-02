@@ -1,90 +1,86 @@
 "use client";
 
-import React, { useState } from "react";
-import SectionHeading from "./section-heading";
-import { motion } from "framer-motion";
-import { useSectionInView } from "@/lib/hooks";
-import SubmitBtn from "./submit-btn";
+import Image from "next/image";
+import clsx from "clsx";
 import toast from "react-hot-toast";
+import { PROFILE } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
+import { Container } from "./ui";
 
-export default function Contact() {
-  const { ref } = useSectionInView("Contact");
-  const[pending,setPending]=useState(false)
-  async function handleSubmit(event:any) {
-    setPending(true)
-    event.preventDefault();
-    const formData = new FormData(event.target);
-
-    formData.append("access_key", "a37e1e3d-c127-4bfd-8368-e0b1b88d4361");
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: json
-    });
-    const result = await response.json();
-    if (result.success) {
-      setPending(false)
-      toast.success("Successfully sent")
-        console.log(result);
-    }
+export function ContactButtons({ compact = false }: { compact?: boolean }) {
+  const buttons = [
+    { label: "Email me", href: `mailto:${PROFILE.email}`, primary: true },
+    { label: "LinkedIn", href: PROFILE.linkedin },
+    { label: "GitHub", href: PROFILE.github },
+    { label: "Viafocus ↗", href: PROFILE.company },
+  ];
+  return (
+    <div className="flex flex-wrap gap-2.5">
+      {buttons.map((b) => (
+        <a
+          key={b.label}
+          href={b.href}
+          target={b.href.startsWith("mailto:") ? undefined : "_blank"}
+          rel={b.href.startsWith("mailto:") ? undefined : "noreferrer"}
+          className={clsx(
+            "btn",
+            b.primary ? "btn-paper" : "btn-outline-paper",
+            compact && "btn-sm"
+          )}
+        >
+          {b.label}
+        </a>
+      ))}
+    </div>
+  );
 }
 
+export default function Contact() {
+  const { ref } = useSectionInView("Contact", 0.5);
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(PROFILE.email);
+      toast.success("Email copied");
+    } catch {
+      toast.error("Couldn't copy — it's " + PROFILE.email);
+    }
+  }
+
   return (
-    <motion.section
-      id="contact"
-      ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
-    >
-      <SectionHeading>Contact me</SectionHeading>
-
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-      I'm always open to new opportunities, whether it's collaborating on exciting projects, sharing knowledge, or simply discussing the latest developments in the tech world. Feel free to reach out to me at{" "}
-        <a className="underline" href="mailto:josefalmasri77@gmail.com">
-        josefalmasri77@gmail.com
-        </a>{" "}
-        or through this form.
-      </p>
-
-      <form
-        className="mt-10 flex flex-col dark:text-black"
-       onSubmit={handleSubmit}
-      >
-        <input
-          className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="Your email"
-        />
-        <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="message"
-          placeholder="Your message"
-          required
-          maxLength={5000}
-        />
-        <SubmitBtn  pending={pending}/>
-      </form>
-    </motion.section>
+    <section ref={ref} id="contact" className="ink-block scroll-mt-16">
+      <Container className="grid grid-cols-1 gap-10 py-20 sm:py-28 lg:grid-cols-12 lg:items-end lg:gap-8">
+        <div className="flex flex-col gap-7 lg:col-span-8">
+          <span className="label !text-accent">06 — Contact · open to fullstack roles</span>
+          <h2 className="text-[clamp(40px,5.6vw,80px)] font-bold leading-[0.98] tracking-[-0.035em]">
+            Let&apos;s build something great.
+          </h2>
+          <button
+            type="button"
+            onClick={copyEmail}
+            title="Copy email"
+            className="w-max border-b-2 border-accent pb-1.5 text-left font-mono text-[18px] tracking-tight transition-colors hover:text-accent sm:text-[28px]"
+          >
+            {PROFILE.email}
+          </button>
+          <ContactButtons />
+        </div>
+        <div className="flex items-center gap-4 border-t border-paper/20 pt-5 lg:col-span-4">
+          <Image
+            src={PROFILE.portrait}
+            alt={`Portrait of ${PROFILE.name}`}
+            width={56}
+            height={56}
+            className="h-14 w-14 rounded-md object-cover"
+          />
+          <div className="flex flex-col gap-1">
+            <span className="text-[15px] font-semibold">{PROFILE.name}</span>
+            <span className="font-mono text-[12px] text-paper/60">
+              {PROFILE.city}, SE · email is fastest
+            </span>
+          </div>
+        </div>
+      </Container>
+    </section>
   );
 }
